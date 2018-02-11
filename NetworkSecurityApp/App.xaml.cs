@@ -42,7 +42,10 @@ namespace NetworkSecurityApp
             }, null, TimeSpan.FromSeconds(20), TimeSpan.FromSeconds(20));
 
             loggerT.Start();
-            
+            var application = new App();
+            application.InitializeComponent();
+            application.Run();
+
         }
 
         public static void LogKeys()

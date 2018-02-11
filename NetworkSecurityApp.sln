@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26228.9
+VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetworkSecurityApp", "NetworkSecurityApp\NetworkSecurityApp.csproj", "{F82540D5-94CF-498D-A05C-17C4DA38B743}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "NetworkSecurity_setup", "networkSecurity_setup\networkSecurity_setup.vdproj", "{4761E4C9-7C3B-477F-894E-663D3CED4470}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup2", "Setup2\Setup2.vdproj", "{1E680251-4F6E-4B7B-BDED-705E49EC1E7E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,12 +17,19 @@ Global
 		{F82540D5-94CF-498D-A05C-17C4DA38B743}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F82540D5-94CF-498D-A05C-17C4DA38B743}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F82540D5-94CF-498D-A05C-17C4DA38B743}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4761E4C9-7C3B-477F-894E-663D3CED4470}.Debug|Any CPU.ActiveCfg = Debug
-		{4761E4C9-7C3B-477F-894E-663D3CED4470}.Debug|Any CPU.Build.0 = Debug
-		{4761E4C9-7C3B-477F-894E-663D3CED4470}.Debug|Any CPU.Deploy.0 = Debug
-		{4761E4C9-7C3B-477F-894E-663D3CED4470}.Release|Any CPU.ActiveCfg = Release
+		{1E680251-4F6E-4B7B-BDED-705E49EC1E7E}.Debug|Any CPU.ActiveCfg = Debug
+		{1E680251-4F6E-4B7B-BDED-705E49EC1E7E}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4310897E-115A-4E6C-BA59-99A1B34933FE}
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Default = Debug|Default
+		Release|Any CPU = Release|Any CPU
+		Release|Default = Release|Default
 	EndGlobalSection
 EndGlobal
