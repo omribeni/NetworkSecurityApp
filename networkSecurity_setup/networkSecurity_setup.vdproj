@@ -28,13 +28,13 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_83126FBC645B2EDB1A9AC5F7CF496ECA"
+        "OwnerKey" = "8:_73348AF0A2E448D0978EA7430A307FEE"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_73348AF0A2E448D0978EA7430A307FEE"
+        "OwnerKey" = "8:_83126FBC645B2EDB1A9AC5F7CF496ECA"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -55,6 +55,22 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.6.1"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.6.1 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.6.1"
+                    }
+                }
+            }
         }
         "Release"
         {
@@ -71,12 +87,34 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
     }
     "Deployable"
     {
         "CustomAction"
         {
+            "{4AA51A2D-7D85-4A59-BA75-B0809FC8B380}:_A765D77487F348989008F0496CE18A47"
+            {
+            "Name" = "8:Primary output from NetworkSecurityApp (Active)"
+            "Condition" = "8:"
+            "Object" = "8:_73348AF0A2E448D0978EA7430A307FEE"
+            "FileType" = "3:2"
+            "InstallAction" = "3:2"
+            "Arguments" = "8:"
+            "EntryPoint" = "8:"
+            "Sequence" = "3:1"
+            "Identifier" = "8:_31299DA5_B963_4DD9_A579_B42853BE14CB"
+            "InstallerClass" = "11:FALSE"
+            "CustomActionData" = "8:"
+            }
         }
         "DefaultFeature"
         {
@@ -188,7 +226,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:networkSecurity_setup"
         "ProductCode" = "8:{74921FF7-19B3-427E-8672-5F12BDE99A04}"
-        "PackageCode" = "8:{07CD7BAE-A54E-420B-BDDA-E29891696C7B}"
+        "PackageCode" = "8:{4766AB44-78FE-4FAF-B718-963662BF12A1}"
         "UpgradeCode" = "8:{0C410D36-E447-4F7C-83EC-6867445888E9}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"

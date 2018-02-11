@@ -23,6 +23,7 @@ namespace NetworkSecurityApp
         public MainWindow()
         {
             InitializeComponent();
+
         }
     }
 }
